@@ -14,14 +14,14 @@
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
            <div class="form-group">
-                <label asp-for="Journal.notebook" class="control-label"></label>
-                <select asp-for="Journal.notebook" class="form-control" asp-items="ViewBag.NoteBooks"></select>
+                <label asp-for="Journal.notebook.Name" class="control-label"></label>
+                <select asp-for="Journal.notebook.Name" class="form-control" asp-items="ViewBag.NoteBooks"></select>
                 <span asp-validation-for="Journal.notebook" class="text-danger"></span>
             </div>
 
             <div class="form-group">
                 <label asp-for="Journal.mood" class="control-label"></label>
-                <select asp-for="Journal.mood" class="form-control" asp-items="ViewBag.Moods"></select>
+                <select asp-for="Journal.mood.MoodPic" class="form-control" asp-items="ViewBag.Moods"></select>
                 <span asp-validation-for="Journal.mood" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -31,7 +31,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Journal.weather" class="control-label"></label>
-                <select asp-for="Journal.weather" class="form-control" asp-items="ViewBag.Weathers"></select>
+                <select asp-for="Journal.weather.WeatherPic" class="form-control" asp-items="ViewBag.Weathers"></select>
                 <span asp-validation-for="Journal.weather" class="text-danger"></span>
             </div>
             <div class="form-group">

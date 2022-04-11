@@ -21,9 +21,9 @@ namespace MyNoteBook.Pages.Journals
 
         public IActionResult OnGet()
         {
-            ViewData["NoteBooks"] = new SelectList(_context.Notebook, "NotebookId", "Name");
-            ViewData["Moods"] = new SelectList(_context.Mood, "MoodId", "MoodPic");
-            ViewData["Weathers"] = new SelectList(_context.Weather, "WeatherId", "WeatherPic");
+            ViewData["NoteBooks"] = new SelectList(_context.Notebook, "Name", "Name");
+            ViewData["Moods"] = new SelectList(_context.Mood, "MoodPic", "MoodPic");
+            ViewData["Weathers"] = new SelectList(_context.Weather, "WeatherPic", "WeatherPic");
             return Page();
         }
 
@@ -41,9 +41,9 @@ namespace MyNoteBook.Pages.Journals
 
             _context.Journal.Add(Journal);
             await _context.SaveChangesAsync();
-            ViewData["NoteBooks"] = new SelectList(_context.Notebook, "NotebookId", "Name");
+   /*         ViewData["NoteBooks"] = new SelectList(_context.Notebook, "NotebookId", "Name");
             ViewData["Moods"] = new SelectList(_context.Mood, "MoodId", "MoodPic");
-            ViewData["Weathers"] = new SelectList(_context.Weather, "WeatherId", "WeatherPic");
+            ViewData["Weathers"] = new SelectList(_context.Weather, "WeatherId", "WeatherPic");*/
             return RedirectToPage("./Index");
         }
     }

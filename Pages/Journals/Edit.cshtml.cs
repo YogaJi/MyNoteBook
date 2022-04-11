@@ -30,12 +30,15 @@ namespace MyNoteBook.Pages.Journals
                 return NotFound();
             }
 
-            Journal = await _context.Journal.FirstOrDefaultAsync(m => m.JournalId == id);
+            Journal = await _context.Journal.Include(p => p.weather).Include(p => p.mood).Include(p => p.notebook).FirstOrDefaultAsync(m => m.JournalId == id);
 
             if (Journal == null)
             {
                 return NotFound();
             }
+            ViewData["NoteBooks"] = new SelectList(_context.Notebook, "NotebookId", "Name");
+            ViewData["Moods"] = new SelectList(_context.Mood, "MoodId", "MoodPic");
+            ViewData["Weathers"] = new SelectList(_context.Weather, "WeatherId", "WeatherPic");
             return Page();
         }
 
