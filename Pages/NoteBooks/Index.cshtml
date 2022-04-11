@@ -1,0 +1,38 @@
+﻿@page
+@model MyNoteBook.Pages.NoteBooks.IndexModel
+
+@{
+    ViewData["Title"] = "My Journal";
+}
+
+<h1>My Journal</h1>
+
+<p>
+    <a asp-page="Create">Create a new NoteBook</a>
+    <a asp-page="../Journals/Create">Add New Journal</a>|
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Notebook[0].Name)
+            </th>
+            <th><p>Number</p></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Notebook) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.NotebookId">Edit</a> |
+                @*<a asp-page="./Details" asp-route-id="@item.Id">Details</a> |*@
+                <a asp-page="./Delete" asp-route-id="@item.NotebookId">Delete</a>|
+                <a asp-page="../Journals/Index" asp-route-id="@item.NotebookId">Journal List</a>|
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
