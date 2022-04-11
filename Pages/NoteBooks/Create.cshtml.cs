@@ -19,6 +19,10 @@ namespace MyNoteBook.Pages.NoteBooks
             _context = context;
         }
 
+        public CreateModel()
+        {
+        }
+
         public IActionResult OnGet()
         {
             return Page();
