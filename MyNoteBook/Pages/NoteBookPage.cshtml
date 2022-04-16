@@ -3,16 +3,24 @@
 @model MyNoteBook.Pages.NoteBookPageModel
 @{
 }
+<head>
+    <link rel="stylesheet" href="~/css/main.css" />
+</head>
 <h1>@Model.Notebook.Name</h1>
 
 <ul>
+    <li>
+        <a asp-page="Journals/Create" asp-route-id="@Model.Notebook.NotebookId">Create new Dairy</a>
+ 
+    </li>
     @foreach (Journal journal in Model.Notebook.Journals)
     {
         <li>
             <a asp-page="Journals/Details" asp-route-id="@journal.JournalId">@journal.Title</a>
             <p>@journal.Date</p>
         </li>
-}
+    }
+
 </ul>
 
 @section Schema

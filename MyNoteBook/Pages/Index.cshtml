@@ -27,10 +27,14 @@
     <div class="container">
         <div class="row">
             @foreach (var notebook in Model.NotebookList)
-            {            
-              <div class="col notebooks">
-                <h3 class="d-inline"><a class=" a-underline" asp-page="NoteBookPage" asp-route-id="@notebook.NotebookId">@notebook.Name</a></h3></div>
+            {
+                <div class="col notebooks">
+                    <h3 class="d-inline"><a class="a-underline" asp-page="NoteBookPage" asp-route-id="@notebook.NotebookId">@notebook.Name</a></h3>
+                </div>
             }
+            <div class="col notebooks">
+                <h6 class="d-inline"><a class="a-underline" asp-page="NoteBooks/Create">+ Add New</a></h6>
             </div>
         </div>
+     </div>
 </section>

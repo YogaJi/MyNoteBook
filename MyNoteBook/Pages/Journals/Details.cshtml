@@ -4,65 +4,84 @@
 @{
     ViewData["Title"] = "Details";
 }
-
-<h1>Details</h1>
-
-<div>
-    <h4>Journal</h4>
+<head>
+    <link rel="stylesheet" href="~/css/main.css" />
+</head>
+<div id="notebookTitle">
+    <a asp-page="../NoteBookPage" asp-route-id="@Model.Journal.NotebookId" style="font-size:18px; color:cornflowerblue">Back</a>
+    <h3 id="notebookName"> @Html.DisplayFor(model => model.Journal.notebook.Name)</h3>
+</div>
+<div id="journalFrame">
+    <p>@Html.DisplayFor(model => model.Journal.Date)</p>
     <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Journal.notebook)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Journal.notebook.Name)
-        </dd>
-
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Journal.mood)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Journal.mood.MoodPic)
-        </dd>
-
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Journal.Date)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Journal.Date)
-        </dd>
-
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Journal.weather)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Journal.weather.WeatherPic)
-        </dd>
-
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Journal.BackgroundColor)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Journal.BackgroundColor)
-        </dd>
-
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Journal.Title)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Journal.Title)
-        </dd>
-
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Journal.Content)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Journal.Content)
-        </dd>
-
-    </dl>
+    <div id="banner">
+        <p>@Html.DisplayFor(model => model.Journal.mood.MoodPic)</p>
+        <p>@Html.DisplayFor(model => model.Journal.weather.WeatherPic)</p>
+        <image>image</image>
+    </div>
+    <div id="title">
+        <h4>@Html.DisplayFor(model => model.Journal.Title)</h4>
+    </div>
+    <div>
+        <p>@Html.DisplayFor(model => model.Journal.Content)</p>
+    </div>
 </div>
-<div>
-    <a asp-page="./Edit" asp-route-id="@Model.Journal.JournalId">Edit</a> |
-    <a asp-page="./Index">Back to List</a>
-</div>
+
+    <div style="margin-top:10%">
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Journal.notebook)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Journal.notebook.Name)
+            </dd>
+
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Journal.mood)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Journal.mood.MoodPic)
+            </dd>
+
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Journal.Date)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Journal.Date)
+            </dd>
+
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Journal.weather)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Journal.weather.WeatherPic)
+            </dd>
+
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Journal.BackgroundColor)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Journal.BackgroundColor)
+            </dd>
+
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Journal.Title)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Journal.Title)
+            </dd>
+
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Journal.Content)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Journal.Content)
+            </dd>
+
+        </dl>
+    </div>
+    <div>
+        <a asp-page="./Edit" asp-route-id="@Model.Journal.JournalId">Edit</a> |
+        <a asp-page="./Index">Back to List</a>
+    </div>

@@ -4,7 +4,9 @@
 @{
     ViewData["Title"] = "Create";
 }
+<script type="text/javascript">
 
+</script>
 <h1>Create</h1>
 
 <h4>Journal</h4>
@@ -15,7 +17,7 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
            <div class="form-group">
                 <label asp-for="Journal.NotebookId" class="control-label"></label>
-                <select asp-for="Journal.NotebookId" class="form-control" asp-items="ViewBag.NoteBooks"></select>
+                <select id="noteSelected"  asp-for="Journal.NotebookId" class="form-control" asp-items="ViewBag.NoteBooks"></select>
                 <span asp-validation-for="Journal.NotebookId" class="text-danger"></span>
             </div>
 

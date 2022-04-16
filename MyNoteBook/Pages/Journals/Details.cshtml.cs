@@ -20,7 +20,6 @@ namespace MyNoteBook.Pages.Journals
         }
 
         public Journal Journal { get; set; }
-
         public async Task<IActionResult> OnGetAsync(int? id)
         {
             if (id == null)
@@ -29,7 +28,7 @@ namespace MyNoteBook.Pages.Journals
             }
 
             Journal = await _context.Journal.Include(p => p.weather).Include(p => p.mood).Include(p => p.notebook).FirstOrDefaultAsync(m => m.JournalId == id);
-
+           
             if (Journal == null)
             {
                 return NotFound();
