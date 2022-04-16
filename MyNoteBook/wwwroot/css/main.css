@@ -1,4 +1,19 @@
 ﻿
-.notebook-normal{
-    background-color: lightpink;
+.a-underline{
+    display:inline-block;
+}
+.notebooks {
+    height: 160px;
+    margin: 6%;
+    background-color: white;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    line-height: 100px;
+    vertical-align: central;
+    outline: inset;
+    border-radius: 2px;
+}
+a:hover{
+    text-decoration:none;
 }

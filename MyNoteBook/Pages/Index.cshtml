@@ -24,11 +24,13 @@
 </form>*@
 
 <section>
-    @foreach (var notebook in Model.NotebookList)
-    {
-        <section>
-            <div class="notebook-normal"><h2><a asp-page="NoteBookPage" asp-route-id="@notebook.NotebookId">@notebook.Name</a></h2></div>
-
-        </section>            
-    }
+    <div class="container">
+        <div class="row">
+            @foreach (var notebook in Model.NotebookList)
+            {            
+              <div class="col notebooks">
+                <h3 class="d-inline"><a class=" a-underline" asp-page="NoteBookPage" asp-route-id="@notebook.NotebookId">@notebook.Name</a></h3></div>
+            }
+            </div>
+        </div>
 </section>

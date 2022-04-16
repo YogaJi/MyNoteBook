@@ -8,7 +8,10 @@
 <ul>
     @foreach (Journal journal in Model.Notebook.Journals)
     {
-        <li><a asp-page="" asp-route-id="@journal.JournalId">@journal.Title</a></li>
+        <li>
+            <a asp-page="Journals/Details" asp-route-id="@journal.JournalId">@journal.Title</a>
+            <p>@journal.Date</p>
+        </li>
 }
 </ul>
 
