@@ -4,7 +4,31 @@
     ViewData["Title"] = "Home page";
 }
 
+<head>
+    <link rel="stylesheet" href="~/css/main.css" />
+</head>
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">My NoteBook</h1>
+    <p>Start your Journals.</p>
 </div>
+@*<form method="post">
+    <div>
+        <label asp-for="Notebook.Name"></label>
+        <input asp-for="Notebook.Name" />
+    </div>
+    <div>
+        <label asp-for="Blog.StartDate"></label>
+        <input asp-for="Blog.StartDate" />
+    </div>
+    <input type="submit" />
+</form>*@
+
+<section>
+    @foreach (var notebook in Model.NotebookList)
+    {
+        <section>
+            <div class="notebook-normal"><h2><a asp-page="NoteBookPage" asp-route-id="@notebook.NotebookId">@notebook.Name</a></h2></div>
+
+        </section>            
+    }
+</section>
