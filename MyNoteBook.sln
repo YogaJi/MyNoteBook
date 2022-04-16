@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyNoteBook", "MyNoteBook\My
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Unit-Test", "Unit-Test\Unit-Test.csproj", "{F959EA20-390B-494B-BE36-AF969B690A75}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intergration-test", "Intergration-test\Intergration-test.csproj", "{F8721AE3-405E-4937-B505-9B21284DEBA6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intergration-test", "Intergration-test\Intergration-test.csproj", "{F8721AE3-405E-4937-B505-9B21284DEBA6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

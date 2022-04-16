@@ -10,10 +10,10 @@ namespace Unit_Test.test
     {
         private readonly CreateModel _createModel;
 
-        public UnitTest1()
+/*        public UnitTest1()
         {
             _createModel = new CreateModel();
-        }
+        }*/
    
         [TestMethod]
         public void Is_Journal_PostAsync_Exist()

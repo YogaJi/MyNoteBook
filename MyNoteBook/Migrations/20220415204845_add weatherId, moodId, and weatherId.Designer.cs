@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MyNoteBook.Data;
 
 namespace MyNoteBook.Migrations
 {
     [DbContext(typeof(MyNoteBookContext))]
-    partial class MyNoteBookContextModelSnapshot : ModelSnapshot
+    [Migration("20220415204845_add weatherId, moodId, and weatherId")]
+    partial class addweatherIdmoodIdandweatherId
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -35,7 +37,13 @@ namespace MyNoteBook.Migrations
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
 
+                    b.Property<int?>("Mood")
+                        .HasColumnType("int");
+
                     b.Property<int>("MoodId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("Notebook")
                         .HasColumnType("int");
 
                     b.Property<int>("NotebookId")
@@ -44,16 +52,19 @@ namespace MyNoteBook.Migrations
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("Weather")
+                        .HasColumnType("int");
+
                     b.Property<int>("WeatherId")
                         .HasColumnType("int");
 
                     b.HasKey("JournalId");
 
-                    b.HasIndex("MoodId");
+                    b.HasIndex("Mood");
 
-                    b.HasIndex("NotebookId");
+                    b.HasIndex("Notebook");
 
-                    b.HasIndex("WeatherId");
+                    b.HasIndex("Weather");
 
                     b.ToTable("Journal");
                 });
@@ -101,7 +112,7 @@ namespace MyNoteBook.Migrations
                     b.Property<string>("FirstContent")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("TemplateId")
+                    b.Property<int?>("Template")
                         .HasColumnType("int");
 
                     b.Property<string>("Title")
@@ -112,7 +123,7 @@ namespace MyNoteBook.Migrations
 
                     b.HasKey("PhotoDiaryId");
 
-                    b.HasIndex("TemplateId");
+                    b.HasIndex("Template");
 
                     b.ToTable("PhotoDiary");
                 });
@@ -147,31 +158,23 @@ namespace MyNoteBook.Migrations
             modelBuilder.Entity("MyNoteBook.Models.Journal", b =>
                 {
                     b.HasOne("MyNoteBook.Models.Mood", "mood")
-                        .WithMany("Journals")
-                        .HasForeignKey("MoodId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .WithMany()
+                        .HasForeignKey("Mood");
 
                     b.HasOne("MyNoteBook.Models.Notebook", "notebook")
-                        .WithMany("Journals")
-                        .HasForeignKey("NotebookId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .WithMany()
+                        .HasForeignKey("Notebook");
 
                     b.HasOne("MyNoteBook.Models.Weather", "weather")
-                        .WithMany("Journals")
-                        .HasForeignKey("WeatherId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .WithMany()
+                        .HasForeignKey("Weather");
                 });
 
             modelBuilder.Entity("MyNoteBook.Models.PhotoDiary", b =>
                 {
                     b.HasOne("MyNoteBook.Models.Template", "template")
                         .WithMany()
-                        .HasForeignKey("TemplateId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("Template");
                 });
 #pragma warning restore 612, 618
         }

@@ -12,6 +12,7 @@ namespace MyNoteBook.Models
         [Key]
         public int NotebookId { get; set; }
         public string Name { get; set; }
-  
+        public ICollection<Journal> Journals { get; set; }
+
     }
 }
