@@ -29,7 +29,6 @@ namespace MyNoteBook.Pages.Journals
 
         [BindProperty]
         public Journal Journal { get; set; }
-        public Notebook Notebook { get; set; }
 
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://aka.ms/RazorPagesCRUD.

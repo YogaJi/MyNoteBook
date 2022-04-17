@@ -4,7 +4,7 @@
     Layout = "../Shared/headerOnly.cshtml";
 }
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Success";
 }
 <script type="text/javascript">
     document.body.style.backgroundColor = "aliceblue";
@@ -19,27 +19,25 @@
     <hr />
 </div>
 <div class="container">
-    <div class="" style="padding: 20% 10% 8% 10%; background-color: white; ">
+    <div class="" style="padding: 20% 10% 20% 10%; background-color: white; ">
         <div class="m-5">
-            <form method="post">
+            
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class="form-group form-notebook-frame">
-                    <label asp-for="Notebook.Name" class="control-label" style="font-style: oblique; font-size:20px">Name:</label>
-                    <input asp-for="Notebook.Name" class="form-control input-notebook" asp-item="ViewBag.newNotebook"/>
-                    <span asp-validation-for="Notebook.Name" class="text-danger"></span>
+                    <p style="font-size: 20px;font-style: oblique; color: darkslateblue ">ssdjfklasjgklwjelgkjwelkgjlwkjgalkwejglkwjeklj</p>
                 </div>
                 <div class="form-group form-create-div">
-                    <input type="submit" value="Create" class="btn btn-light form-create-btn font-weight-bolder" />
+                    <button value="Confirm" style="font-size: 18px; color: cornflowerblue; font-style: oblique; width: 80px; height: 40px; border: none; background-color: transparent " class="btn btn-light font-weight-bolder" onclick="window.location.href ='../Index'">Confirm</button>
                 </div>
-            </form>
+            
         </div>
-        <div style="margin-top: 30%;">
+   @*     <div style="margin-top: 30%;">
             <a asp-page="Index">Back to List</a>
-        </div>
+        </div>*@
     </div>
 </div>
 
 
-    @section Scripts {
-        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-    }
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

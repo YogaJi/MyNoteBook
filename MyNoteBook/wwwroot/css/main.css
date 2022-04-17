@@ -6,15 +6,85 @@
 }
 .notebooks {
     height: 160px;
-    margin: 6%;
-    background-color:ghostwhite;
+    margin: 2%;
+    background-color: ghostwhite;
     text-align: center;
     justify-content: center;
     align-items: center;
-    line-height: 70px;
+    /*line-height: 120px;*/
     vertical-align: central;
-    outline: inset;
-    border-radius: 2px;
+    border: 1px solid lightblue;
+    border-radius: 2px 8px 8px 2px;
+    font-size: 16px;
+    padding-top: 6%;
+    flex-grow:1;
+    flex-basis:0;
+}
+.notebooks a{
+    color:darkslategrey;
+    font-weight:600;
+}
+@media (min-width: 576px) {
+    .notebooks {
+        background-color: yellowgreen;
+        margin:2% 6%;
+    }
+}
+
+@media (min-width: 768px) {
+    .notebooks {
+        height: 160px;
+        margin: 2%;
+        background-color: ghostwhite;
+        
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        /*line-height: 120px;*/
+        vertical-align: central;
+        border: 1px solid lightblue;
+        border-radius: 2px 8px 8px 2px;
+        font-size: 16px;
+        padding-top: 6%;
+        flex-grow: 1;
+        flex-basis: 0;
+    }
+    .notebooks a{
+        color:dimgray;
+    }
+ 
+}
+
+
+@media (min-width: 992px) {
+    .notebooks {
+        background-color: lightpink;
+        padding-top:4%;
+    }
+    .notebooks a{
+        color:white;
+    }
+
+}
+
+
+@media (min-width: 1200px) {
+    .notebooks {
+        background-color: mediumpurple;
+        height: 200px;
+    }
+    .notebooks a {
+        color: white;
+        font-size: 18px;
+        font-weight: 700;
+    }
+}
+
+@media (min-width: 1400px) {
+    .notebooks {
+        background-color: darkslategrey;
+        height:200px;
+    }
 }
 #notebookTitle {
     align-items: center;
