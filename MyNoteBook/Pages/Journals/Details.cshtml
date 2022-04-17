@@ -4,12 +4,11 @@
 @{
     ViewData["Title"] = "Details";
 }
-<head>
-    <link rel="stylesheet" href="~/css/main.css" />
-</head>
+
 <div id="notebookTitle">
     <a asp-page="../NoteBookPage" asp-route-id="@Model.Journal.NotebookId" style="font-size:18px; color:cornflowerblue">Back</a>
     <h3 id="notebookName"> @Html.DisplayFor(model => model.Journal.notebook.Name)</h3>
+    <div></div>
 </div>
 <div id="journalFrame">
     <p>@Html.DisplayFor(model => model.Journal.Date)</p>

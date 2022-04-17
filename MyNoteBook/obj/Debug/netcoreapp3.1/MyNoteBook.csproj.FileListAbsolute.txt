@@ -355,3 +355,4 @@ C:\Users\DELL\source\repos\MyNoteBook\MyNoteBook\MyNoteBook\bin\Debug\netcoreapp
 C:\Users\DELL\source\repos\MyNoteBook\MyNoteBook\MyNoteBook\bin\Debug\netcoreapp3.1\MyNoteBook.Views.pdb
 C:\Users\DELL\source\repos\MyNoteBook\MyNoteBook\MyNoteBook\obj\Debug\netcoreapp3.1\MyNoteBook.genruntimeconfig.cache
 C:\Users\DELL\source\repos\MyNoteBook\MyNoteBook\MyNoteBook\obj\Debug\netcoreapp3.1\Razor\Pages\NoteBookPage.cshtml.g.cs
+C:\Users\DELL\source\repos\MyNoteBook\MyNoteBook\MyNoteBook\obj\Debug\netcoreapp3.1\Razor\Pages\Shared\headerOnly.cshtml.g.cs
