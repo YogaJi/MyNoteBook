@@ -23,7 +23,7 @@ namespace MyNoteBook.Pages.Journals
         {
             ViewData["NoteBooks"] = new SelectList(_context.Notebook, "NotebookId", "Name");
             ViewData["Moods"] = new SelectList(_context.Mood, "MoodId", "MoodPic");
-            ViewData["Weathers"] = new SelectList(_context.Weather, "WeatherId", "WeatherPic");
+            ViewData["Weathers"] = new SelectList(_context.Weather, "WeatherId", "WeatherName");
             var ColorList = new SelectList(_context.BGColor, "BGId", "BGString");
             ViewData["BGColors"] = new SelectList(_context.BGColor, "BGId", "BGString");
             return Page();

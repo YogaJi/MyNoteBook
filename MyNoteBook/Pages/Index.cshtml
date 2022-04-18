@@ -1,27 +1,26 @@
 ﻿@page
 @model IndexModel
+
 @{
     ViewData["Title"] = "Home page";
 }
 
-<head>
-    <link rel="stylesheet" href="~/css/main.css" />
-</head>
 <div class="text-center">
     <h1 class="display-4">My NoteBook</h1>
-    <p>Start your Journals.</p>
+    <p>Start your Journals.😊</p>
+    <image src="../pic/cloudy.png" style="width:60px;height:60px;"></image>
 </div>
 @*<form method="post">
-    <div>
-        <label asp-for="Notebook.Name"></label>
-        <input asp-for="Notebook.Name" />
-    </div>
-    <div>
-        <label asp-for="Blog.StartDate"></label>
-        <input asp-for="Blog.StartDate" />
-    </div>
-    <input type="submit" />
-</form>*@
+        <div>
+            <label asp-for="Notebook.Name"></label>
+            <input asp-for="Notebook.Name" />
+        </div>
+        <div>
+            <label asp-for="Blog.StartDate"></label>
+            <input asp-for="Blog.StartDate" />
+        </div>
+        <input type="submit" />
+    </form>*@
 
 <section>
     <div class="container">
@@ -36,5 +35,5 @@
                 <h6 class="d-inline"><a class="a-underline" asp-page="NoteBooks/Create">+ Add New</a></h6>
             </div>
         </div>
-     </div>
+    </div>
 </section>

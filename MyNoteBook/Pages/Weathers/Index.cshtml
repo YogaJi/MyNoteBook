@@ -14,6 +14,12 @@
     <thead>
         <tr>
             <th>
+                Icon
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Weather[0].WeatherName)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Weather[0].WeatherPic)
             </th>
             <th></th>
@@ -22,6 +28,12 @@
     <tbody>
 @foreach (var item in Model.Weather) {
         <tr>
+            <td>
+                <image class="weatherPic" src="@Html.DisplayFor(modelItem => item.WeatherPic)" style="width:60px;height:60px;"></image>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WeatherName)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.WeatherPic)
             </td>

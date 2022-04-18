@@ -44,7 +44,8 @@
                 @Html.DisplayFor(modelItem => item.Content)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.weather.WeatherPic)
+                <image src="@Html.DisplayFor(modelItem => item.weather.WeatherPic)" style="width:40px;height:40px;"></image>
+                @*@Html.DisplayFor(modelItem => item.weather.WeatherPic)*@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.mood.MoodPic)

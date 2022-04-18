@@ -22,76 +22,60 @@
                 </div>
                 <hr/>
             </div>
-                <div class="form-itemBanner">
-                    <div class="container" style="padding:1%">
-                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                        <div class="form-group form-display underline">
-                            <label asp-for="Journal.NotebookId" class="control-label">NoteBook</label>
-                            <select id="noteSelected" asp-for="Journal.NotebookId" class="form-control select-no-border" asp-items="ViewBag.NoteBooks"></select>
-                            <span asp-validation-for="Journal.NotebookId" class="text-danger"></span>
-                        </div>
+            <div class="form-itemBanner">
+                <div class="container" style="padding:1%">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group form-display underline">
+                        <label asp-for="Journal.NotebookId" class="control-label">NoteBook</label>
+                        <select id="noteSelected" asp-for="Journal.NotebookId" class="form-control select-no-border" asp-items="ViewBag.NoteBooks"></select>
+                        <span asp-validation-for="Journal.NotebookId" class="text-danger"></span>
+                    </div>
 
-                        <div class="form-group form-display form-mood-weather underline">
-                            <select asp-for="Journal.MoodId" class="form-control select-no-border" asp-items="ViewBag.Moods"></select>
-                            <span asp-validation-for="Journal.MoodId" class="text-danger"></span>
+                    <div class="form-group form-display form-mood-weather underline">
+                        <select asp-for="Journal.MoodId" class="form-control select-no-border" asp-items="ViewBag.Moods"></select>
+                        <span asp-validation-for="Journal.MoodId" class="text-danger"></span>
 
-                            @* <label asp-for="Journal.Date" class="control-label"></label>*@
-                            <input asp-for="Journal.Date" value="2022-01-13" class="form-control input-no-shadow" />
-                            <span asp-validation-for="Journal.Date" class="text-danger"></span>
+                        @* <label asp-for="Journal.Date" class="control-label"></label>*@
+                        <input asp-for="Journal.Date" value="2022-01-13" class="form-control input-no-shadow" />
+                        <span asp-validation-for="Journal.Date" class="text-danger"></span>
 
-                            <select asp-for="Journal.WeatherId" class="form-control select-no-border" asp-items="ViewBag.Weathers"></select>
-                            <span asp-validation-for="Journal.WeatherId" class="text-danger"></span>
-                        </div>
+                        <div style="border:none"><image id="WeatherImg" style="width:40px;height:40px"></image></div>
+                        <select id="SelectWeatherIcon" asp-for="Journal.WeatherId" class="form-control select-no-border" asp-items="ViewBag.Weathers"></select>
+                        <span asp-validation-for="Journal.WeatherId" class="text-danger"></span>
+                    </div>
 
-                        <div class="form-group form-display form-bg">
-                            @*<label asp-for="Journal.BackgroundColor" class="control-label"></label>*@
-                            <label class="label-BG-Title">BG</label>
-                            @*<input asp-for="Journal.BGId" class="form-control" />*@
-                            <select asp-for="Journal.BGId" id="SelectColors" class="form-control select-no-border" asp-items="ViewBag.BGColors">
-
-                            </select>
-                            <span asp-validation-for="Journal.BGId" class="text-danger"></span>
-                        </div>
+                    <div class="form-group form-display form-bg">
+                        @*<label asp-for="Journal.BackgroundColor" class="control-label"></label>*@
+                        <label class="label-BG-Title">BG</label>
+                        @*<input asp-for="Journal.BGId" class="form-control" />*@
+                        <select asp-for="Journal.BGId" id="SelectColors" class="form-control select-no-border" asp-items="ViewBag.BGColors">
+                        </select>
+                        <span asp-validation-for="Journal.BGId" class="text-danger"></span>
+                    </div>
                 </div>
             </div>
 
-        @*         <div class="form-group">
-            <label asp-for="Journal.MoodId" class="control-label"></label>
-            <select asp-for="Journal.MoodId" class="form-control" asp-items="ViewBag.Moods"></select>
-            <span asp-validation-for="Journal.MoodId" class="text-danger"></span>
-        </div>
+            <div class="container">
+                <div class="form-group form-title-content">
+                    <div class="form-display form-title-line">
+                        <label class="label-BG-Title text-center " asp-for="Journal.Title" class="control-label"></label>
+                        <input asp-for="Journal.Title" class="form-control fs-2" />
+                        <span asp-validation-for="Journal.Title" class="text-danger"></span>
+                    </div>
+                    @*<label asp-for="Journal.Content" class="control-label"></label>*@
+                    <textarea asp-for="Journal.Content" class="form-control fs-5" /></textarea>
+                    <span asp-validation-for="Journal.Content" class="text-danger"></span>
+                </div>
+                <div class="form-notes-pic" style="width:100%">
+                    <textarea class="form-notes form-control fs-5" style="background-color:lightyellow"></textarea>
+                    <div class="form-pic"><img src="..." class="rounded float-end" alt="..."></div>
+                </div>
+                <div>
+                    <a asp-page="Index">Back to List</a>
+                </div>
 
-        <div class="form-group">
-            <label asp-for="Journal.WeatherId" class="control-label"></label>
-            <select asp-for="Journal.WeatherId" class="form-control" asp-items="ViewBag.Weathers"></select>
-            <span asp-validation-for="Journal.WeatherId" class="text-danger"></span>
-        </div>
-                            *@
-                            <div class="container">
-                                <div class="form-group form-title-content">
-                                    <div class="form-display form-title-line">
-                                        <label class="label-BG-Title text-center " asp-for="Journal.Title" class="control-label"></label>
-                                        <input asp-for="Journal.Title" class="form-control fs-2" />
-                                        <span asp-validation-for="Journal.Title" class="text-danger"></span>
-                                    </div>
-                                    @*<label asp-for="Journal.Content" class="control-label"></label>*@
-                                    <textarea asp-for="Journal.Content" class="form-control fs-5" /></textarea>
-                                    <span asp-validation-for="Journal.Content" class="text-danger"></span>
-                                </div>
-                                <div class="form-notes-pic" style="width:100%">
-                                    <textarea class="form-notes form-control fs-5" style="background-color:lightyellow"></textarea>
-                                    <div class="form-pic"><img src="..." class="rounded float-end" alt="..."></div>
-                                </div>
-                                <div>
-                                    <a asp-page="Index">Back to List</a>
-                                </div>
-                            </div>
-                            @*          <div class="form-group">
-            <input type="submit" value="Create" class="btn btn-primary" />
-        </div>*@
-
-</form>
-  
+            </div>     
+        </form>  
     </div>
 </div>
 
@@ -101,7 +85,7 @@
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
 <script type="text/javascript">
-
+    //modify select colors
     var SelectColors = document.getElementById("SelectColors");
     var items = SelectColors.options;
     console.log(items);
@@ -111,12 +95,26 @@
         items[i].style.backgroundColor = val;
     }
     SelectColors.onchange = function () {
-        var index = SelectColors.selectedIndex; //序号，取当前选中选项的序号
+        var index = SelectColors.selectedIndex;
         console.log(index);
         var vals = SelectColors.options[index].text;
         console.log(vals);
         document.body.style.backgroundColor = vals;
         document.getElementById("mainBody").style.backgroundColor = vals;
     }
- 
+
+    //load pic to the selected weather name
+    var SelectWeather = document.getElementById("SelectWeatherIcon");
+    var weatherImage = document.getElementById("WeatherImg");
+    var icons = SelectWeather.options;
+    //console.log(icons);
+    
+    SelectWeather.onchange = function () {
+        var index = SelectWeather.selectedIndex;
+        console.log(index);
+        var vals = SelectWeather.options[index].text;
+        var ads = "../pic/" + vals + ".png";
+        console.log(ads);
+        weatherImage.src = ads;
+    }
 </script>
