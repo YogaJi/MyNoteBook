@@ -11,7 +11,7 @@
     document.body.style.backgroundColor = "aliceblue";
 </script>
 
-<div class="" style="background-color:aliceblue">
+<div id="mainBody" style="background-color:aliceblue">
     <div class="create-journal">
         <form method="post">
             <div class="container">
@@ -46,47 +46,51 @@
                         <div class="form-group form-display form-bg">
                             @*<label asp-for="Journal.BackgroundColor" class="control-label"></label>*@
                             <label class="label-BG-Title">BG</label>
-                            <input asp-for="Journal.BackgroundColor" class="form-control" />
-                            <span asp-validation-for="Journal.BackgroundColor" class="text-danger"></span>
+                            @*<input asp-for="Journal.BGId" class="form-control" />*@
+                            <select asp-for="Journal.BGId" id="SelectColors" class="form-control select-no-border" asp-items="ViewBag.BGColors">
+
+                            </select>
+                            <span asp-validation-for="Journal.BGId" class="text-danger"></span>
                         </div>
-                    </div>
                 </div>
-            
-            @*         <div class="form-group">
-                <label asp-for="Journal.MoodId" class="control-label"></label>
-                <select asp-for="Journal.MoodId" class="form-control" asp-items="ViewBag.Moods"></select>
-                <span asp-validation-for="Journal.MoodId" class="text-danger"></span>
             </div>
 
-            <div class="form-group">
-                <label asp-for="Journal.WeatherId" class="control-label"></label>
-                <select asp-for="Journal.WeatherId" class="form-control" asp-items="ViewBag.Weathers"></select>
-                <span asp-validation-for="Journal.WeatherId" class="text-danger"></span>
-            </div>
-            *@
-        <div class="container">
-            <div class="form-group form-title-content">
-                <div class="form-display form-title-line">
-                    <label class="label-BG-Title text-center " asp-for="Journal.Title" class="control-label"></label>
-                    <input asp-for="Journal.Title" class="form-control fs-2" />
-                    <span asp-validation-for="Journal.Title" class="text-danger"></span>
-                </div>
-                @*<label asp-for="Journal.Content" class="control-label"></label>*@
-                <textarea asp-for="Journal.Content" class="form-control fs-5" /></textarea>
-                <span asp-validation-for="Journal.Content" class="text-danger"></span>
-            </div>
-            <div class="form-notes-pic" style="width:100%">
-                <textarea class="form-notes form-control fs-5" style="background-color:lightyellow"></textarea>
-                <div class="form-pic"><img src="..." class="rounded float-end" alt="..."></div>
-            </div>
-            <div>
-                <a asp-page="Index">Back to List</a>
-            </div>
+        @*         <div class="form-group">
+            <label asp-for="Journal.MoodId" class="control-label"></label>
+            <select asp-for="Journal.MoodId" class="form-control" asp-items="ViewBag.Moods"></select>
+            <span asp-validation-for="Journal.MoodId" class="text-danger"></span>
         </div>
-            @*          <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>*@
-        </form>
+
+        <div class="form-group">
+            <label asp-for="Journal.WeatherId" class="control-label"></label>
+            <select asp-for="Journal.WeatherId" class="form-control" asp-items="ViewBag.Weathers"></select>
+            <span asp-validation-for="Journal.WeatherId" class="text-danger"></span>
+        </div>
+                            *@
+                            <div class="container">
+                                <div class="form-group form-title-content">
+                                    <div class="form-display form-title-line">
+                                        <label class="label-BG-Title text-center " asp-for="Journal.Title" class="control-label"></label>
+                                        <input asp-for="Journal.Title" class="form-control fs-2" />
+                                        <span asp-validation-for="Journal.Title" class="text-danger"></span>
+                                    </div>
+                                    @*<label asp-for="Journal.Content" class="control-label"></label>*@
+                                    <textarea asp-for="Journal.Content" class="form-control fs-5" /></textarea>
+                                    <span asp-validation-for="Journal.Content" class="text-danger"></span>
+                                </div>
+                                <div class="form-notes-pic" style="width:100%">
+                                    <textarea class="form-notes form-control fs-5" style="background-color:lightyellow"></textarea>
+                                    <div class="form-pic"><img src="..." class="rounded float-end" alt="..."></div>
+                                </div>
+                                <div>
+                                    <a asp-page="Index">Back to List</a>
+                                </div>
+                            </div>
+                            @*          <div class="form-group">
+            <input type="submit" value="Create" class="btn btn-primary" />
+        </div>*@
+
+</form>
   
     </div>
 </div>
@@ -96,3 +100,23 @@
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
+<script type="text/javascript">
+
+    var SelectColors = document.getElementById("SelectColors");
+    var items = SelectColors.options;
+    console.log(items);
+    for (var i = 0; i < items.length; i++) {
+        var val = SelectColors.options[i].text;
+        //console.log(val);
+        items[i].style.backgroundColor = val;
+    }
+    SelectColors.onchange = function () {
+        var index = SelectColors.selectedIndex; //序号，取当前选中选项的序号
+        console.log(index);
+        var vals = SelectColors.options[index].text;
+        console.log(vals);
+        document.body.style.backgroundColor = vals;
+        document.getElementById("mainBody").style.backgroundColor = vals;
+    }
+ 
+</script>

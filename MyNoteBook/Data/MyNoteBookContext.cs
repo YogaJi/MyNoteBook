@@ -25,5 +25,7 @@ namespace MyNoteBook.Data
         public DbSet<MyNoteBook.Models.Template> Template { get; set; }
 
         public DbSet<MyNoteBook.Models.Weather> Weather { get; set; }
+
+        public DbSet<MyNoteBook.Models.BGColor> BGColor { get; set; }
     }
 }

@@ -357,3 +357,8 @@ C:\Users\DELL\source\repos\MyNoteBook\MyNoteBook\MyNoteBook\obj\Debug\netcoreapp
 C:\Users\DELL\source\repos\MyNoteBook\MyNoteBook\MyNoteBook\obj\Debug\netcoreapp3.1\Razor\Pages\NoteBookPage.cshtml.g.cs
 C:\Users\DELL\source\repos\MyNoteBook\MyNoteBook\MyNoteBook\obj\Debug\netcoreapp3.1\Razor\Pages\Shared\headerOnly.cshtml.g.cs
 C:\Users\DELL\source\repos\MyNoteBook\MyNoteBook\MyNoteBook\obj\Debug\netcoreapp3.1\Razor\Pages\NoteBooks\success.cshtml.g.cs
+C:\Users\DELL\source\repos\MyNoteBook\MyNoteBook\MyNoteBook\obj\Debug\netcoreapp3.1\Razor\Pages\BGColors\Create.cshtml.g.cs
+C:\Users\DELL\source\repos\MyNoteBook\MyNoteBook\MyNoteBook\obj\Debug\netcoreapp3.1\Razor\Pages\BGColors\Delete.cshtml.g.cs
+C:\Users\DELL\source\repos\MyNoteBook\MyNoteBook\MyNoteBook\obj\Debug\netcoreapp3.1\Razor\Pages\BGColors\Details.cshtml.g.cs
+C:\Users\DELL\source\repos\MyNoteBook\MyNoteBook\MyNoteBook\obj\Debug\netcoreapp3.1\Razor\Pages\BGColors\Edit.cshtml.g.cs
+C:\Users\DELL\source\repos\MyNoteBook\MyNoteBook\MyNoteBook\obj\Debug\netcoreapp3.1\Razor\Pages\BGColors\Index.cshtml.g.cs

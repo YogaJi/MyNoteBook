@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using MyNoteBook.Data;
 using MyNoteBook.Models;
 
-namespace MyNoteBook.Pages.Journals
+namespace MyNoteBook.Pages.BGColors
 {
     public class CreateModel : PageModel
     {
@@ -21,16 +21,11 @@ namespace MyNoteBook.Pages.Journals
 
         public IActionResult OnGet()
         {
-            ViewData["NoteBooks"] = new SelectList(_context.Notebook, "NotebookId", "Name");
-            ViewData["Moods"] = new SelectList(_context.Mood, "MoodId", "MoodPic");
-            ViewData["Weathers"] = new SelectList(_context.Weather, "WeatherId", "WeatherPic");
-            var ColorList = new SelectList(_context.BGColor, "BGId", "BGString");
-            ViewData["BGColors"] = new SelectList(_context.BGColor, "BGId", "BGString");
             return Page();
         }
 
         [BindProperty]
-        public Journal Journal { get; set; }
+        public BGColor BGColor { get; set; }
 
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://aka.ms/RazorPagesCRUD.
@@ -41,12 +36,8 @@ namespace MyNoteBook.Pages.Journals
                 return Page();
             }
 
-            _context.Journal.Add(Journal);
+            _context.BGColor.Add(BGColor);
             await _context.SaveChangesAsync();
-            ViewData["NoteBooks"] = new SelectList(_context.Notebook, "NotebookId", "Name");
-            ViewData["Moods"] = new SelectList(_context.Mood, "MoodId", "MoodPic");
-            ViewData["Weathers"] = new SelectList(_context.Weather, "WeatherId", "WeatherPic");
-            ViewData["BGColors"] = new SelectList(_context.BGColor, "BGId", "BGString");
 
             return RedirectToPage("./Index");
         }

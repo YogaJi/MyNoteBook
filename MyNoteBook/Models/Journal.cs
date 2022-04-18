@@ -18,7 +18,9 @@ namespace MyNoteBook.Models
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime Date { get; set; }
 
-        public string BackgroundColor { get; set; }
+        /*public string BackgroundColor { get; set; }*/
+        public int BGId { get; set; }
+        public BGColor BGColor { get; set; }
         public string Content { get; set; }
 
         public int NotebookId { get; set; }
@@ -31,13 +33,6 @@ namespace MyNoteBook.Models
 
         public int MoodId { get; set; }
         public Mood mood { get; set; }
-
-        /*        public int WeatherId { get; set; }
-        [ForeignKey("Weather")]
-        public Weather weather { get; set; }
-              public int MoodId { get; set; }
-               [ForeignKey("Mood")]
-               public Mood mood { get; set; }*/
 
 
     }

@@ -1,0 +1,41 @@
+﻿@page
+@model MyNoteBook.Pages.BGColors.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Background Colors</h1>
+<script type="text/javascript"></script>
+<p>
+    <a asp-page="Create">Create a New Color</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Colors</th>
+            <th>
+                Color Codes
+                @*@Html.DisplayNameFor(model => model.BGColor[0].BGString)*@
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.BGColor) {
+        <tr>
+            <td>
+                <div id="BGColorId" style="width:50px;height:50px;background-color:@Html.DisplayFor(modelItem => item.BGString)"></div>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BGString)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.BGId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.BGId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.BGId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
